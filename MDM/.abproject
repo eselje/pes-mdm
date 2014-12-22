@@ -1,0 +1,37 @@
+{
+  "ProjectName": "MDM",
+  "ProjectGuid": "396aa10d-f3eb-4610-a01e-00b179ae93c9",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.MDM",
+  "DisplayName": "MDM",
+  "Author": "",
+  "Description": "",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.5.0",
+  "AndroidPermissions": [],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{954e7a4a-7e4a-405c-842a-02d4f0e55d11}",
+  "WP8ProductID": "{555a463f-09ca-46dd-92cf-f14477a74f00}",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
