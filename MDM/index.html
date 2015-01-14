@@ -1,16 +1,135 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
-
+    <link href="mdm.css" rel="stylesheet" />
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
-    
+    <script src='./app.js'></script>
 </head>
+
 <body>
-    
+    <div data-role="view" id="scrollview-home" data-title="Motor Decisions Matter" data-page='1'>
+        <div data-role="navbar">
+            <span data-role="view-title">Motor Decisions Matter</span>
+        </div>
+        <div id="scrollview-container">
+            <div data-role="scrollview" data-content-height="90%">
+                <div class='page' data-role="page">
+                    <div style='text-align:center; font-size: larger;'>
+                        Welcome to Productive Energy System's
+                        <br />Motor Efficiency Calculator.
+                        <br />How much you can save by upgrading your motor?
+                    </div>
+                    <img class='logo' src='images\motor.png' />
+                </div>
+                <div class='page' data-role="page" data-title="Step 1: Older (lower efficiency) motor">
+                    <h2>
+                        Step 1: Older (lower efficiency) motor
+                    </h2>
+                    <table id='oldTable'>
+                        <tr>
+                            <td>Horsepower:
+                            </td>
+                            <td>
+                                <span class='inputField'>
+                                    <input id="oldHp" type='range' min='25' max='450' step='25' />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Motor Type
+                            </td>
+                            <td>
+                                <span class='inputField'>
+                                    Enclosed
+                                    <input id='bEnclosed' type="checkbox" data-role="switch" /> Open</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>RPMs
+                            </td>
+                            <td>
+                                <span class='inputField'><input id="oldRPM" type='range' min='25' max='2500' step='25' />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hours/yr
+                            </td>
+                            <td>
+                                <span class='inputField'><input id="oldHours" type='text' readonly='true' />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Electrical Rate
+                            </td>
+                            <td>
+                                <span class='inputField'> <input id="oldRate" type='text' />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Efficiency %
+                            </td>
+                            <td>
+                                <span class='inputField'>  <input id="oldEff" type='text' />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan='2'></td>
+                        </tr>
+                        <tr>
+                            <td> kW Annual
+                            </td>
+                            <td>
+                                <span class='inputField'>  <input id="oldKwAnnual" type='text' readonly='true' />
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Annual Operating Cost
+                            </td>
+                            <td>
+                                <span class='inputField'>  <input id="oldCost" type='text' readonly='true' />
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class='page' data-role="page">
+                    New (Higher efficiency) Replacement motor Inputs Echo everything we already have from step one (hours, HP, enclosure, speed, electric rate) Lookup New motor efficiency and offer override Outputs: kW Annual kWh Annual Operating cost
+                </div>
+                <div class='page' data-role="page">
+                    Step 3: Comparison of old motor vs new motor Echo the input values List results side by side (or top and bottom) for old vs new motor (kW, kWh, and $/yr) and calculate savings
+                </div>
+                <div class='page' data-role='page'>
+                    Links to web sites for training (Productive Energy) and more information (www.motorsmatter.org)
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new kendo.mobile.Application(document.body);
+        $(document).ready(function () {
+            $("#oldHp").kendoSlider({
+                min: 10,
+                max: 30,
+                orientation: "vertical",
+                smallStep: 10,
+                largeStep: 25
+            });
+        })
+        var lists = document.querySelectorAll("input[type=range][list]"),
+            arr = Array.prototype.slice.call(lists);
+        arr.forEach(ticks);
+    </script>
 </body>
+
 </html>
